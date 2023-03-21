@@ -4,15 +4,31 @@
   box-sizing: border-box;
 }
 
-body .center {
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
   width: 100%;
   height: 100vh;
   background: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s all linear;
 }
-body .center .modal {
+.center .modal {
   width: 60%;
   height: -moz-fit-content;
   height: fit-content;
@@ -21,7 +37,7 @@ body .center .modal {
   overflow: hidden;
   box-shadow: 0 0 20px #ff3f34;
 }
-body .center .modal .modal-header {
+.center .modal .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,32 +45,37 @@ body .center .modal .modal-header {
   padding: 15px 20px;
   color: #ffffff;
 }
-body .center .modal .modal-header h2 {
+.center .modal .modal-header h2 {
   font-weight: bold;
 }
-body .center .modal .modal-header i {
+.center .modal .modal-header i {
   font-size: 25px;
   cursor: pointer;
   color: #1e272e;
   padding: 12px;
 }
-body .center .modal .modal-body {
+.center .modal .modal-header i:hover {
+  color: red;
+  font-size: 30px;
+  transition: 0.3s all ease;
+}
+.center .modal .modal-body {
   font-size: 18px;
   text-align: center;
   margin: 20px 0;
 }
-body .center .modal .modal-body i {
+.center .modal .modal-body i {
   padding: 20px;
   border: 2px solid #2ed573;
   border-radius: 50%;
   color: #ff3f34;
   margin-bottom: 15px;
 }
-body .center .modal .modal-footer {
+.center .modal .modal-footer {
   text-align: right;
   padding: 15px 23px;
 }
-body .center .modal .modal-footer button {
+.center .modal .modal-footer button {
   border: 1.3px solid #1e272e;
   background: transparent;
   padding: 5px 10px;
@@ -62,7 +83,19 @@ body .center .modal .modal-footer button {
   font-size: 15px;
   cursor: pointer;
 }
-body #showModal {
+.center .modal .modal-footer button:hover {
+  background: #ff3f34;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.3s all linear;
+}
+
+.center.showtotalmodal {
+  opacity: 1;
+  visibility: visible;
+}
+
+#showModal {
   padding: 12px 20px;
   background: red;
   border: 0;
@@ -70,4 +103,10 @@ body #showModal {
   color: #ffffff;
   border-radius: 5px;
   cursor: pointer;
+}
+#showModal:hover {
+  background: #70a1ff;
+  color: #1e272e;
+  font-weight: bold;
+  transition: 0.3s all ease;
 }/*# sourceMappingURL=style.css.map */
